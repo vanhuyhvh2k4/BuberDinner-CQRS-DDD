@@ -1,5 +1,10 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using BuberDinner.Application;
+using BuberDinner.Infrashstructure;
+
+var builder = WebApplication.CreateBuilder(args);
 {
+    builder.Services.AddApplication()
+                    .AddInfrashstructure();
     builder.Services.AddControllers();
 }
 

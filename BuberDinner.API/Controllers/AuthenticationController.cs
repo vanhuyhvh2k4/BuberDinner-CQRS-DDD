@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BuberDinner.API.Controllers
 {
+    [ApiController]
     [Route("api/")]
     public class AuthenticationController : Controller
     {
@@ -17,7 +18,7 @@ namespace BuberDinner.API.Controllers
         }
 
         [HttpPost("register")]
-        public IActionResult Register(RegisterRequest request)
+        public IActionResult Register( RegisterRequest request)
         {
             var authResult = _authenticationService.Register(request.FirstName, request.LastName, request.Email, request.Password);
 
