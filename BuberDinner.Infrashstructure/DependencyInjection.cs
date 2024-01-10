@@ -1,4 +1,5 @@
-﻿using BuberDinner.Application.Services.Authentication;
+﻿using BuberDinner.Application.Common.Interfaces.Authentication;
+using BuberDinner.Infrashstructure.Authentication;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BuberDinner.Infrashstructure
@@ -7,6 +8,8 @@ namespace BuberDinner.Infrashstructure
     {
         public static IServiceCollection AddInfrashstructure(this IServiceCollection services)
         {
+            services.AddSingleton<IJwtTokenGenerator, JwtTokenGenerator>();
+
             return services;
         }
     }
