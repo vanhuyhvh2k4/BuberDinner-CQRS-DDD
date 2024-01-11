@@ -23,8 +23,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Controllers\" />
+    <None Remove="Middleware\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="Middleware\" />
   </ItemGroup>
 </Project>
