@@ -3,7 +3,7 @@ using ErrorOr;
 
 namespace BuberDinner.Domain.Common.Errors.User
 {
-	public class Errors
+	public partial class Errors
 	{
 		public static class User
 		{

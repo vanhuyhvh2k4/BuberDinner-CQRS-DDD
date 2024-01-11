@@ -12,12 +12,14 @@
     <None Remove="Common\Errors\" />
     <None Remove="Common\Errors\Errors.User" />
     <None Remove="Common\Errors\User\" />
+    <None Remove="Common\Errors\Authentication\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\" />
     <Folder Include="Common\" />
     <Folder Include="Common\Errors\" />
     <Folder Include="Common\Errors\User\" />
+    <Folder Include="Common\Errors\Authentication\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ErrorOr" Version="1.9.0" />
