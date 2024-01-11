@@ -1,7 +1,7 @@
-﻿using BuberDinner.API.Filters;
-using BuberDinner.Application.Common.Errors;
+﻿using BuberDinner.Application.Common.Errors;
 using BuberDinner.Application.Services.Authentication;
 using BuberDinner.Contracts.Authentication;
+using FluentResults;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -23,14 +23,25 @@ namespace BuberDinner.API.Controllers
         [HttpPost("register")]
         public IActionResult Register(RegisterRequest request)
         {
-            OneOf.OneOf<AuthenticationResult, IError> registerResult = _authenticationService.Register(
+            Result<AuthenticationResult> registerResult = _authenticationService.Register(
                 request.FirstName,
                 request.LastName,
                 request.Email,
                 request.Password);
-            return registerResult.Match(
-                authResult => Ok(MapAuthResult(authResult)),
-                error => Problem(statusCode: (int)error.StatusCode, error.ErrorMessage));
+
+            if (registerResult.IsSuccess)
+            {
+                return Ok(MapAuthResult(registerResult.Value));
+            }
+
+            var firstError = registerResult.Errors[0];
+
+            if (firstError is DuplicateEmailError)
+            {
+                return Problem(statusCode: StatusCodes.Status409Conflict, detail: "Email already exists.");
+            }
+
+            return Problem();
         }
 
         [HttpPost("login")]
