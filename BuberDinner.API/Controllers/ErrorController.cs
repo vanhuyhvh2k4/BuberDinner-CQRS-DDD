@@ -12,7 +12,7 @@ namespace BuberDinner.API.Controllers
         {
             Exception? exception = HttpContext.Features.Get<IExceptionHandlerFeature>()?.Error;
 
-            return Problem(statusCode: StatusCodes.Status500InternalServerError, title: exception.Message);
+            return Problem();
         }
     }
 }
