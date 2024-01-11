@@ -1,7 +1,9 @@
-﻿using BuberDinner.API.Filters;
+﻿using BuberDinner.API.Errors;
+using BuberDinner.API.Filters;
 using BuberDinner.API.Middleware;
 using BuberDinner.Application;
 using BuberDinner.Infrashstructure;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 {
@@ -9,6 +11,8 @@ var builder = WebApplication.CreateBuilder(args);
                     .AddInfrashstructure(builder.Configuration);
     builder.Services.AddControllers();
     //builder.Services.AddControllers(options => options.Filters.Add<ErrorHandlingFilterAttribute>());
+
+    builder.Services.AddSingleton<ProblemDetailsFactory, BuberDinnerProblemDetailsFactory>();
 }
 
 var app = builder.Build();
