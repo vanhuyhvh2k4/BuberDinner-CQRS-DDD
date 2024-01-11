@@ -8,6 +8,8 @@
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="Mapster" Version="7.4.0" />
+    <PackageReference Include="Mapster.DependencyInjection" Version="1.0.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,6 +29,7 @@
     <None Remove="Filters\" />
     <None Remove="Common\" />
     <None Remove="Common\Errors\" />
+    <None Remove="Common\Mapping\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
@@ -34,5 +37,6 @@
     <Folder Include="Filters\" />
     <Folder Include="Common\" />
     <Folder Include="Common\Errors\" />
+    <Folder Include="Common\Mapping\" />
   </ItemGroup>
 </Project>
