@@ -4,6 +4,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.Extensions.Options;
+using ErrorOr;
 
 namespace BuberDinner.API.Common.Errors
 {
@@ -88,6 +89,13 @@ namespace BuberDinner.API.Common.Errors
             if (traceId != null)
             {
                 problemDetails.Extensions["traceId"] = traceId;
+            }
+
+            var errors = httpContext?.Items["errors"] as List<Error>;
+
+            if (errors is not null)
+            {
+                problemDetails.Extensions.Add("errors", errors.Select(e => e.Code));
             }
         }
     }

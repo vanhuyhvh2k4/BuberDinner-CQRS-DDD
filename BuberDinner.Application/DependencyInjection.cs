@@ -1,8 +1,5 @@
-﻿using BuberDinner.Application.Authentication.Commands.Register;
-using BuberDinner.Application.Authentication.Common;
-using BuberDinner.Application.Common.Behaviors;
+﻿using BuberDinner.Application.Common.Behaviors;
 using MediatR;
-using ErrorOr;
 using Microsoft.Extensions.DependencyInjection;
 using FluentValidation;
 using System.Reflection;
@@ -15,7 +12,7 @@ namespace BuberDinner.Application
 		{
 			services.AddMediatR(typeof(DependencyInjection).Assembly);
 
-			services.AddScoped<IPipelineBehavior<RegisterCommand, ErrorOr<AuthenticationResult>>, ValidateRegisterCommandBehavior>();
+			services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 
 			services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
