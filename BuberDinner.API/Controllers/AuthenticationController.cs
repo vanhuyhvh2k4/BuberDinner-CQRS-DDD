@@ -5,6 +5,7 @@ using BuberDinner.Contracts.Authentication;
 using ErrorOr;
 using MapsterMapper;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -25,6 +26,7 @@ namespace BuberDinner.API.Controllers
         }
 
         [HttpPost("register")]
+        [AllowAnonymous]
         public async Task<IActionResult> Register(RegisterRequest request)
         {
             var command = _mapper.Map<RegisterCommand>(request);
@@ -37,6 +39,7 @@ namespace BuberDinner.API.Controllers
         }
 
         [HttpPost("login")]
+        [AllowAnonymous]
         public async Task<IActionResult> Login(LoginRequest request)
         {
             var query = _mapper.Map<LoginQuery>(request);

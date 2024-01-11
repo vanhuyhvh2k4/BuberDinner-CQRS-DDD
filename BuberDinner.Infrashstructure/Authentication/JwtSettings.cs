@@ -11,7 +11,7 @@ namespace BuberDinner.Infrashstructure.Authentication
 
 		public string Issuer { get; init; } = null!;
 
-		public object Audience { get; init; } = null!;
+		public string Audience { get; init; } = null!;
 	}
 }
 
