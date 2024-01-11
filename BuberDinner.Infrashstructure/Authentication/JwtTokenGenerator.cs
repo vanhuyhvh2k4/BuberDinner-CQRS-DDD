@@ -37,6 +37,7 @@ namespace BuberDinner.Infrashstructure.Authentication
 
             var securityToken = new JwtSecurityToken(
                 issuer: _jwtSettings.Issuer,
+                audience: _jwtSettings.Audience,
                 expires: _dateTimeProvider.UtcNow.AddMinutes(_jwtSettings.ExpiryMinutes),
                 claims: claims,
                 signingCredentials: signingCredentials);
