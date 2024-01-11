@@ -23,7 +23,7 @@ namespace BuberDinner.Application.Authentication.Commands.Register
         {
             await Task.CompletedTask;
             // 1. Validate the user doesn't exists
-            if (_userRepository.GetUserByEmail(command.email) is not null)
+            if (_userRepository.GetUserByEmail(command.Email) is not null)
             {
                 return Errors.UserError.DuplicateEmail;
             }
@@ -31,10 +31,10 @@ namespace BuberDinner.Application.Authentication.Commands.Register
             // 2. Create new user & persist to db
             var user = new User
             {
-                FirstName = command.firstName,
-                LastName = command.lastName,
-                Email = command.email,
-                Password = command.password
+                FirstName = command.FirstName,
+                LastName = command.LastName,
+                Email = command.Email,
+                Password = command.Password
             };
 
             _userRepository.Add(user);

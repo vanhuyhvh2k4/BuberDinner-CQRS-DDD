@@ -23,13 +23,13 @@ namespace BuberDinner.Application.Authentication.Queries.Login
         {
             await Task.CompletedTask;
             // 1. Validate user exists
-            if (_userRepository.GetUserByEmail(query.email) is not User user)
+            if (_userRepository.GetUserByEmail(query.Email) is not User user)
             {
                 return Errors.AuthenticationError.InvalidCredentials;
             }
 
             // 2. Validate the password is correct
-            if (user.Password != query.password)
+            if (user.Password != query.Password)
             {
                 return Errors.AuthenticationError.InvalidCredentials;
             }
