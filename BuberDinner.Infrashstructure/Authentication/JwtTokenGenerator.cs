@@ -2,14 +2,14 @@
 using System.Security.Claims;
 using System.Text;
 using BuberDinner.Application.Common.Interfaces.Authentication;
-using BuberDinner.Application.Services.Services;
+using BuberDinner.Application.Common.Interfaces.Services;
 using BuberDinner.Domain.Entities;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
 namespace BuberDinner.Infrashstructure.Authentication
 {
-	public class JwtTokenGenerator : IJwtTokenGenerator
+    public class JwtTokenGenerator : IJwtTokenGenerator
 	{
         private readonly JwtSettings _jwtSettings;
 

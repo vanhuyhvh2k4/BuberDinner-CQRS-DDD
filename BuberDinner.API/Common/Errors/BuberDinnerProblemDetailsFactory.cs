@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.Extensions.Options;
 
-namespace BuberDinner.API.Errors
+namespace BuberDinner.API.Common.Errors
 {
     internal sealed class BuberDinnerProblemDetailsFactory : ProblemDetailsFactory
     {
