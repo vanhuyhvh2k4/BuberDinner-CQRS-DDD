@@ -17,6 +17,7 @@
     <None Remove="Common\Interfaces\Authentication\" />
     <None Remove="Common\Interfaces\Persistence\" />
     <None Remove="Common\Interfaces\Services\" />
+    <None Remove="Common\Errors\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />
@@ -26,6 +27,7 @@
     <Folder Include="Common\Interfaces\Authentication\" />
     <Folder Include="Common\Interfaces\Persistence\" />
     <Folder Include="Common\Interfaces\Services\" />
+    <Folder Include="Common\Errors\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
