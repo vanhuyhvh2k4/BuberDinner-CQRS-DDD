@@ -24,9 +24,11 @@
   <ItemGroup>
     <None Remove="Controllers\" />
     <None Remove="Middleware\" />
+    <None Remove="Filters\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Middleware\" />
+    <Folder Include="Filters\" />
   </ItemGroup>
 </Project>
