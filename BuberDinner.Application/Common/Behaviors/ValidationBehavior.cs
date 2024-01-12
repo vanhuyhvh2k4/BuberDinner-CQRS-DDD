@@ -37,8 +37,7 @@ namespace BuberDinner.Application.Common.Behaviors
             var errors = validationResult.Errors
                 .ConvertAll(validationFailure => Error.Validation(
                     validationFailure.PropertyName,
-                    validationFailure.ErrorMessage))
-                .ToList();
+                    validationFailure.ErrorMessage));
 
             return (dynamic)errors;
         }

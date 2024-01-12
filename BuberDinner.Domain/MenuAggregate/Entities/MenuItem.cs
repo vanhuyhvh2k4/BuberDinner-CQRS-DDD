@@ -1,5 +1,4 @@
-﻿using System;
-using BuberDinner.Domain.Common.Models;
+﻿using BuberDinner.Domain.Common.Models;
 using BuberDinner.Domain.MenuAggregate.ValueObjects;
 
 namespace BuberDinner.Domain.MenuAggregate.Entities

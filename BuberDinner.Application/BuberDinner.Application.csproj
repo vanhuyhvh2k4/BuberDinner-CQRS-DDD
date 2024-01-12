@@ -22,6 +22,9 @@
     <None Remove="Authentication\Queries\Login\" />
     <None Remove="Authentication\Common\" />
     <None Remove="Common\Behaviors\" />
+    <None Remove="Menus\" />
+    <None Remove="Menus\Commands\" />
+    <None Remove="Menus\Commands\CreateMenu\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\" />
@@ -36,6 +39,9 @@
     <Folder Include="Authentication\Queries\Login\" />
     <Folder Include="Authentication\Common\" />
     <Folder Include="Common\Behaviors\" />
+    <Folder Include="Menus\" />
+    <Folder Include="Menus\Commands\" />
+    <Folder Include="Menus\Commands\CreateMenu\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
