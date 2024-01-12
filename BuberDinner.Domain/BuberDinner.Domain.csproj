@@ -18,7 +18,6 @@
     <None Remove="User\ValueObjects\" />
     <None Remove="BillAggregate\" />
     <None Remove="DinnerAggregate\" />
-    <None Remove="Entities\" />
     <None Remove="GuestAggregate\" />
     <None Remove="HostAggregate\" />
     <None Remove="MenuAggregate\" />
@@ -36,7 +35,6 @@
     <Folder Include="User\ValueObjects\" />
     <Folder Include="BillAggregate\" />
     <Folder Include="DinnerAggregate\" />
-    <Folder Include="Entities\" />
     <Folder Include="GuestAggregate\" />
     <Folder Include="HostAggregate\" />
     <Folder Include="MenuAggregate\" />
