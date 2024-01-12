@@ -13,6 +13,7 @@
     <None Remove="Common\Errors\Errors.User" />
     <None Remove="Common\Errors\User\" />
     <None Remove="Common\Errors\Authentication\" />
+    <None Remove="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\" />
@@ -20,6 +21,7 @@
     <Folder Include="Common\Errors\" />
     <Folder Include="Common\Errors\User\" />
     <Folder Include="Common\Errors\Authentication\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ErrorOr" Version="1.9.0" />
