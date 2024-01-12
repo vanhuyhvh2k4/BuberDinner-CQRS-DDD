@@ -13,7 +13,16 @@
     <None Remove="Common\Errors\Errors.User" />
     <None Remove="Common\Errors\User\" />
     <None Remove="Common\Errors\Authentication\" />
-    <None Remove="Models\" />
+    <None Remove="Menu\" />
+    <None Remove="Common\Models\" />
+    <None Remove="Menu\ValueObjects\" />
+    <None Remove="Menu\Entities\" />
+    <None Remove="Dinner\" />
+    <None Remove="Host\" />
+    <None Remove="MenuReview\" />
+    <None Remove="Host\ValueObjects\" />
+    <None Remove="Dinner\ValueObjects\" />
+    <None Remove="MenuReview\ValueObjects\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\" />
@@ -21,7 +30,16 @@
     <Folder Include="Common\Errors\" />
     <Folder Include="Common\Errors\User\" />
     <Folder Include="Common\Errors\Authentication\" />
-    <Folder Include="Models\" />
+    <Folder Include="Menu\" />
+    <Folder Include="Common\Models\" />
+    <Folder Include="Menu\ValueObjects\" />
+    <Folder Include="Menu\Entities\" />
+    <Folder Include="Dinner\" />
+    <Folder Include="Host\" />
+    <Folder Include="MenuReview\" />
+    <Folder Include="Host\ValueObjects\" />
+    <Folder Include="Dinner\ValueObjects\" />
+    <Folder Include="MenuReview\ValueObjects\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ErrorOr" Version="1.9.0" />
