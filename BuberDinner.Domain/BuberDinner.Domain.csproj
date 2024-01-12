@@ -7,55 +7,41 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Entities\" />
     <None Remove="Common\" />
     <None Remove="Common\Errors\" />
     <None Remove="Common\Errors\Errors.User" />
     <None Remove="Common\Errors\User\" />
     <None Remove="Common\Errors\Authentication\" />
-    <None Remove="Menu\" />
     <None Remove="Common\Models\" />
-    <None Remove="Menu\ValueObjects\" />
-    <None Remove="Menu\Entities\" />
-    <None Remove="Dinner\" />
-    <None Remove="Host\" />
-    <None Remove="MenuReview\" />
-    <None Remove="Host\ValueObjects\" />
-    <None Remove="Dinner\ValueObjects\" />
     <None Remove="MenuReview\ValueObjects\" />
-    <None Remove="Bill\" />
-    <None Remove="Bill\ValueObjects\" />
-    <None Remove="Dinner\Entities\" />
-    <None Remove="Guest\" />
-    <None Remove="Guest\ValueObjects\" />
     <None Remove="Common\ValueObjects\" />
-    <None Remove="User\" />
     <None Remove="User\ValueObjects\" />
+    <None Remove="BillAggregate\" />
+    <None Remove="DinnerAggregate\" />
+    <None Remove="Entities\" />
+    <None Remove="GuestAggregate\" />
+    <None Remove="HostAggregate\" />
+    <None Remove="MenuAggregate\" />
+    <None Remove="MenuReviewAggregate\" />
+    <None Remove="UserAggregate\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Entities\" />
     <Folder Include="Common\" />
     <Folder Include="Common\Errors\" />
     <Folder Include="Common\Errors\User\" />
     <Folder Include="Common\Errors\Authentication\" />
-    <Folder Include="Menu\" />
     <Folder Include="Common\Models\" />
-    <Folder Include="Menu\ValueObjects\" />
-    <Folder Include="Menu\Entities\" />
-    <Folder Include="Dinner\" />
-    <Folder Include="Host\" />
-    <Folder Include="MenuReview\" />
-    <Folder Include="Host\ValueObjects\" />
-    <Folder Include="Dinner\ValueObjects\" />
-    <Folder Include="MenuReview\ValueObjects\" />
-    <Folder Include="Bill\" />
-    <Folder Include="Bill\ValueObjects\" />
-    <Folder Include="Dinner\Entities\" />
-    <Folder Include="Guest\" />
-    <Folder Include="Guest\ValueObjects\" />
+    <Folder Include="MenuReviewAggregate\ValueObjects\" />
     <Folder Include="Common\ValueObjects\" />
-    <Folder Include="User\" />
     <Folder Include="User\ValueObjects\" />
+    <Folder Include="BillAggregate\" />
+    <Folder Include="DinnerAggregate\" />
+    <Folder Include="Entities\" />
+    <Folder Include="GuestAggregate\" />
+    <Folder Include="HostAggregate\" />
+    <Folder Include="MenuAggregate\" />
+    <Folder Include="MenuReviewAggregate\" />
+    <Folder Include="UserAggregate\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ErrorOr" Version="1.9.0" />

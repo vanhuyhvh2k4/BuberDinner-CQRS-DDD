@@ -1,0 +1,25 @@
+﻿using BuberDinner.Domain.Common.Models;
+
+namespace BuberDinner.Domain.MenuAggregate.ValueObjects
+{
+    public sealed class MenuSectionId : ValueObject
+    {
+        public Guid Value { get; set; }
+
+        private MenuSectionId(Guid value)
+        {
+            Value = value;
+        }
+
+        public static MenuSectionId CreateUnique()
+        {
+            return new(Guid.NewGuid());
+        }
+
+        public override IEnumerable<object> GetEqualtityComponents()
+        {
+            yield return Value;
+        }
+    }
+}
+
