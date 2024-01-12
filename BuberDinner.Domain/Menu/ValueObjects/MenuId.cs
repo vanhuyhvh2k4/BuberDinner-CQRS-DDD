@@ -17,7 +17,7 @@ namespace BuberDinner.Domain.Menu.ValueObjects
             return new(Guid.NewGuid());
         }
 
-        public override IEnumerable<object> GetQualtityComponents()
+        public override IEnumerable<object> GetEqualtityComponents()
         {
             yield return Value;
         }

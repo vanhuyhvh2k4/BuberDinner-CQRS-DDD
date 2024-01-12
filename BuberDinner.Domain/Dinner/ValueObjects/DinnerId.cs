@@ -4,9 +4,9 @@ namespace BuberDinner.Domain.Dinner.ValueObjects
 {
     public class DinnerId : ValueObject
 	{
-        public Guid Value { get; set; }
+        public Guid Value { get; }
 
-        public DinnerId(Guid value)
+        private DinnerId(Guid value)
         {
             Value = value;
         }
@@ -16,7 +16,7 @@ namespace BuberDinner.Domain.Dinner.ValueObjects
             return new(Guid.NewGuid());
         }
 
-        public override IEnumerable<object> GetQualtityComponents()
+        public override IEnumerable<object> GetEqualtityComponents()
         {
             yield return Value;
         }

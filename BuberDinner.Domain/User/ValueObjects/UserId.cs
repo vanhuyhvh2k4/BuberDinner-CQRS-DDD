@@ -1,18 +1,18 @@
 ﻿using System;
 using BuberDinner.Domain.Common.Models;
 
-namespace BuberDinner.Domain.Menu.ValueObjects
+namespace BuberDinner.Domain.User.ValueObjects
 {
-	public sealed class MenuItemId : ValueObject
+	public class UserId : ValueObject
 	{
-		public Guid Value { get; set; }
+        public Guid Value { get; }
 
-        private MenuItemId(Guid value)
-        {
+        private UserId(Guid value)
+		{
             Value = value;
-        }
+		}
 
-        public static MenuItemId CreateUnique()
+        public static UserId CreateUnique()
         {
             return new(Guid.NewGuid());
         }

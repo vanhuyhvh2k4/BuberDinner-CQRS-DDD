@@ -1,13 +1,12 @@
-﻿using System;
-using BuberDinner.Domain.Common.Models;
+﻿using BuberDinner.Domain.Common.Models;
 
 namespace BuberDinner.Domain.Menu.ValueObjects
 {
-	public sealed class MenuSectionId : ValueObject
+    public sealed class MenuSectionId : ValueObject
 	{
 		public Guid Value { get; set; }
 
-        public MenuSectionId(Guid value)
+        private MenuSectionId(Guid value)
         {
             Value = value;
         }
@@ -17,7 +16,7 @@ namespace BuberDinner.Domain.Menu.ValueObjects
             return new(Guid.NewGuid());
         }
 
-        public override IEnumerable<object> GetQualtityComponents()
+        public override IEnumerable<object> GetEqualtityComponents()
         {
             yield return Value;
         }

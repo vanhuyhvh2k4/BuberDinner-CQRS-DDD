@@ -23,6 +23,14 @@
     <None Remove="Host\ValueObjects\" />
     <None Remove="Dinner\ValueObjects\" />
     <None Remove="MenuReview\ValueObjects\" />
+    <None Remove="Bill\" />
+    <None Remove="Bill\ValueObjects\" />
+    <None Remove="Dinner\Entities\" />
+    <None Remove="Guest\" />
+    <None Remove="Guest\ValueObjects\" />
+    <None Remove="Common\ValueObjects\" />
+    <None Remove="User\" />
+    <None Remove="User\ValueObjects\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\" />
@@ -40,6 +48,14 @@
     <Folder Include="Host\ValueObjects\" />
     <Folder Include="Dinner\ValueObjects\" />
     <Folder Include="MenuReview\ValueObjects\" />
+    <Folder Include="Bill\" />
+    <Folder Include="Bill\ValueObjects\" />
+    <Folder Include="Dinner\Entities\" />
+    <Folder Include="Guest\" />
+    <Folder Include="Guest\ValueObjects\" />
+    <Folder Include="Common\ValueObjects\" />
+    <Folder Include="User\" />
+    <Folder Include="User\ValueObjects\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ErrorOr" Version="1.9.0" />

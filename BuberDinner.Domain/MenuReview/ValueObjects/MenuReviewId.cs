@@ -6,7 +6,7 @@ namespace BuberDinner.Domain.MenuReview.ValueObjects
 	{
         public Guid Value { get; set; }
 
-        public MenuReviewId(Guid value)
+        private MenuReviewId(Guid value)
         {
             Value = value;
         }
@@ -16,7 +16,7 @@ namespace BuberDinner.Domain.MenuReview.ValueObjects
             return new(Guid.NewGuid());
         }
 
-        public override IEnumerable<object> GetQualtityComponents()
+        public override IEnumerable<object> GetEqualtityComponents()
         {
             yield return Value;
         }
