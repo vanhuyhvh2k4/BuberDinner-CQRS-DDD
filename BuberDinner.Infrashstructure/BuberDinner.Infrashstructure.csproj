@@ -15,6 +15,7 @@
     <None Remove="Persistence\" />
     <None Remove="Persistence\Repositories\" />
     <None Remove="Persistence\Configurations\" />
+    <None Remove="Persistence\Interceptors\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Authentication\" />
@@ -22,6 +23,7 @@
     <Folder Include="Persistence\" />
     <Folder Include="Persistence\Repositories\" />
     <Folder Include="Persistence\Configurations\" />
+    <Folder Include="Persistence\Interceptors\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.1.2" />

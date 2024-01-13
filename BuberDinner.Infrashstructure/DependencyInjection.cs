@@ -5,6 +5,7 @@ using BuberDinner.Application.Common.Interfaces.Persistence;
 using BuberDinner.Application.Common.Interfaces.Services;
 using BuberDinner.Infrashstructure.Authentication;
 using BuberDinner.Infrashstructure.Persistence;
+using BuberDinner.Infrashstructure.Persistence.Interceptors;
 using BuberDinner.Infrashstructure.Persistence.Repositories;
 using BuberDinner.Infrashstructure.Services;
 
@@ -32,6 +33,8 @@ namespace BuberDinner.Infrashstructure
         public static IServiceCollection AddPersistence(this IServiceCollection services)
         {
             services.AddDbContext<BuberDinnerDbContext>(options => options.UseSqlServer("Server=localhost;Database=BuberDinner;User Id=sa; Password=vanhuy123!;TrustServerCertificate=true"));
+
+            services.AddScoped<PublishDomainEventsInterceptor>();
 
             services.AddScoped<IUserRepository, UserRepository>();
 

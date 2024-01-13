@@ -23,6 +23,7 @@
     <None Remove="MenuAggregate\" />
     <None Remove="MenuReviewAggregate\" />
     <None Remove="UserAggregate\" />
+    <None Remove="MenuAggregate\Events\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\" />
@@ -40,8 +41,10 @@
     <Folder Include="MenuAggregate\" />
     <Folder Include="MenuReviewAggregate\" />
     <Folder Include="UserAggregate\" />
+    <Folder Include="MenuAggregate\Events\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ErrorOr" Version="1.9.0" />
+    <PackageReference Include="MediatR" Version="11.0.0" />
   </ItemGroup>
 </Project>
