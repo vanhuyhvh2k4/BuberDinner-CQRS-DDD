@@ -25,7 +25,7 @@ namespace BuberDinner.API.Controllers
         }
 
         [HttpPost("{hostId}")]
-        public async Task<IActionResult> CreateMenu(CreateMenuRequest request, string hostId)
+        public async Task<IActionResult> CreateMenu(CreateMenuRequest request, Guid hostId)
         {
             var command = _mapper.Map<CreateMenuCommand>((request, hostId));
 

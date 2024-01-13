@@ -4,7 +4,7 @@ namespace BuberDinner.Domain.MenuAggregate.ValueObjects
 {
     public sealed class MenuItemId : ValueObject
     {
-        public Guid Value { get; set; }
+        public Guid Value { get; }
 
         private MenuItemId(Guid value)
         {
@@ -14,6 +14,11 @@ namespace BuberDinner.Domain.MenuAggregate.ValueObjects
         public static MenuItemId CreateUnique()
         {
             return new(Guid.NewGuid());
+        }
+
+        public static MenuItemId Create(Guid value)
+        {
+            return new(value);
         }
 
         public override IEnumerable<object> GetEqualtityComponents()

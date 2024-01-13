@@ -16,11 +16,11 @@ namespace BuberDinner.Domain.MenuAggregate
 
         private readonly List<MenuReviewId> _menuReviewIds = new();
 
-        public string Name { get; }
+        public string Name { get; private set; }
 
-        public string Description { get; }
+        public string Description { get; private set; }
 
-        public AverageRating AverageRating { get; }
+        public AverageRating AverageRating { get; private set; }
 
         public IReadOnlyList<MenuSection> Sections => _sections.AsReadOnly();
 
@@ -28,11 +28,11 @@ namespace BuberDinner.Domain.MenuAggregate
 
         public IReadOnlyList<MenuReviewId> MenuReviewIds => _menuReviewIds.AsReadOnly();
 
-        public HostId HostId { get; }
+        public HostId HostId { get; private set; }
 
-        public DateTime CreatedTime { get; }
+        public DateTime CreatedTime { get; private set; }
 
-        public DateTime UpdatedTime { get; }
+        public DateTime UpdatedTime { get; private set; }
 
         private Menu(
             MenuId menuId,
@@ -65,6 +65,9 @@ namespace BuberDinner.Domain.MenuAggregate
                 DateTime.UtcNow,
                 DateTime.UtcNow);
         }
+#pragma warning disable CS8618
+        private Menu() {}
+#pragma warning restore CS8618
     }
 }
 

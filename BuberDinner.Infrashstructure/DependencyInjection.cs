@@ -1,11 +1,15 @@
 ﻿using System.Text;
+
 using BuberDinner.Application.Common.Interfaces.Authentication;
 using BuberDinner.Application.Common.Interfaces.Persistence;
 using BuberDinner.Application.Common.Interfaces.Services;
 using BuberDinner.Infrashstructure.Authentication;
 using BuberDinner.Infrashstructure.Persistence;
+using BuberDinner.Infrashstructure.Persistence.Repositories;
 using BuberDinner.Infrashstructure.Services;
+
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
@@ -27,6 +31,8 @@ namespace BuberDinner.Infrashstructure
 
         public static IServiceCollection AddPersistence(this IServiceCollection services)
         {
+            services.AddDbContext<BuberDinnerDbContext>(options => options.UseSqlServer("Server=localhost;Database=BuberDinner;User Id=sa; Password=vanhuy123!;TrustServerCertificate=true"));
+
             services.AddScoped<IUserRepository, UserRepository>();
 
             services.AddScoped<IMenuRepository, MenuRepository>();

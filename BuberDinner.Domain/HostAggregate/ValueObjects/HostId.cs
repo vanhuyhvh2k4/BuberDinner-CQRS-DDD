@@ -4,19 +4,19 @@ namespace BuberDinner.Domain.HostAggregate.ValueObjects
 {
     public class HostId : ValueObject
     {
-        public string Value { get; }
+        public Guid Value { get; }
 
-        private HostId(string value)
+        private HostId(Guid value)
         {
             Value = value;
         }
 
         public static HostId CreateUnique()
         {
-            return new(Guid.NewGuid().ToString());
+            return new(Guid.NewGuid());
         }
 
-        public static HostId Create(string value)
+        public static HostId Create(Guid value)
         {
             return new(value);
         }
