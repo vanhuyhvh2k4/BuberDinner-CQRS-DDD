@@ -16,6 +16,11 @@ namespace BuberDinner.Domain.GuestAggregate.ValueObjects
             return new(Guid.NewGuid());
         }
 
+        public static GuestId Create(Guid value)
+        {
+            return new(value);
+        }
+
         public override IEnumerable<object> GetEqualtityComponents()
         {
             yield return Value;

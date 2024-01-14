@@ -11,39 +11,39 @@ namespace BuberDinner.Domain.DinnerAggregate
     {
         private readonly List<Reservation> _reservations = new();
 
-        public string Name { get; }
+        public string Name { get; private set; }
 
-        public string Description { get; }
+        public string Description { get; private set; }
 
-        public DateTime StartDateTime { get; }
+        public DateTime StartDateTime { get; private set; }
 
-        public DateTime EndDateTime { get; }
+        public DateTime EndDateTime { get; private set; }
 
         public DateTime? StartedDateTime { get; private set; }
 
         public DateTime? EndedDateTime { get; private set; }
 
-        public string Status { get; }
+        public string Status { get; private set; }
 
-        public bool IsPublic { get; }
+        public bool IsPublic { get; private set; }
 
-        public int MaxGuest { get; }
+        public int MaxGuest { get; private set; }
 
-        public Price Price { get; }
+        public Price Price { get; private set; }
 
-        public HostId HostId { get; }
+        public HostId HostId { get; private set; }
 
-        public MenuId MenuId { get; }
+        public MenuId MenuId { get; private set; }
 
-        public string ImageUrl { get; }
+        public string ImageUrl { get; private set; }
 
-        public Location Location { get; }
+        public Location Location { get; private set; }
 
         public IReadOnlyList<Reservation> Reservations => _reservations.AsReadOnly();
 
-        public DateTime CreatedDateTime { get; }
+        public DateTime CreatedDateTime { get; private set; }
 
-        public DateTime UpdatedDateTime { get; }
+        public DateTime UpdatedDateTime { get; private set; }
 
         private Dinner(
             DinnerId dinnerId,
@@ -110,6 +110,11 @@ namespace BuberDinner.Domain.DinnerAggregate
                 DateTime.UtcNow,
                 DateTime.UtcNow);
         }
+
+#pragma warning disable CS8618
+        private Dinner() { }
+#pragma warning restore CS8618
     }
 }
+
 

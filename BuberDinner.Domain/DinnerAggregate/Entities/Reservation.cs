@@ -7,19 +7,19 @@ namespace BuberDinner.Domain.DinnerAggregate.Entities
 {
     public class Reservation : Entity<ReservationId>
     {
-        public int GuestCount { get; }
+        public int GuestCount { get; private set; }
 
-        public string ReservationStatus { get; }
+        public string ReservationStatus { get; private set; }
 
-        public GuestId GuestId { get; }
+        public GuestId GuestId { get; private set; }
 
-        public BillId BillId { get; }
+        public BillId BillId { get; private set; }
 
         public DateTime? ArrivalDateTime { get; private set; }
 
-        public DateTime CreatedDateTime { get; }
+        public DateTime CreatedDateTime { get; private set; }
 
-        public DateTime UpdatedDateTime { get; }
+        public DateTime UpdatedDateTime { get; private set; }
 
         private Reservation(
             ReservationId reservationId,
@@ -53,6 +53,10 @@ namespace BuberDinner.Domain.DinnerAggregate.Entities
                 DateTime.UtcNow,
                 DateTime.UtcNow);
         }
+
+#pragma warning disable CS8618
+        private Reservation() { }
+#pragma warning restore CS8618
     }
 }
 

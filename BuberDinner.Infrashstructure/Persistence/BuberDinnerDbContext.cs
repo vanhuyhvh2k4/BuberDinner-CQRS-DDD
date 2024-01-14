@@ -1,6 +1,5 @@
-﻿using System;
-
-using BuberDinner.Domain.Common.Models;
+﻿using BuberDinner.Domain.Common.Models;
+using BuberDinner.Domain.DinnerAggregate;
 using BuberDinner.Domain.MenuAggregate;
 using BuberDinner.Domain.UserAggregate;
 using BuberDinner.Infrashstructure.Persistence.Interceptors;
@@ -20,6 +19,8 @@ namespace BuberDinner.Infrashstructure.Persistence
         public DbSet<Menu> Menus { get; set; }
 
         public DbSet<User> Users { get; set; }
+
+        public DbSet<Dinner> Dinners { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
