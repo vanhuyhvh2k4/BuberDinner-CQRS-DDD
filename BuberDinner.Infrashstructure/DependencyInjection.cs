@@ -23,16 +23,16 @@ namespace BuberDinner.Infrashstructure
         public static IServiceCollection AddInfrashstructure(this IServiceCollection services, ConfigurationManager configuration)
         {
             services.AddAuth(configuration)
-                    .AddPersistence();
+                    .AddPersistence(configuration);
 
             services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
 
             return services;
         }
 
-        public static IServiceCollection AddPersistence(this IServiceCollection services)
+        public static IServiceCollection AddPersistence(this IServiceCollection services, ConfigurationManager configuration)
         {
-            services.AddDbContext<BuberDinnerDbContext>(options => options.UseSqlServer("Server=localhost;Database=BuberDinner;User Id=sa; Password=vanhuy123!;TrustServerCertificate=true"));
+            services.AddDbContext<BuberDinnerDbContext>(options => options.UseMySql(configuration.GetConnectionString("Default"), new MySqlServerVersion(new Version(10, 4, 25))));
 
             services.AddScoped<PublishDomainEventsInterceptor>();
 

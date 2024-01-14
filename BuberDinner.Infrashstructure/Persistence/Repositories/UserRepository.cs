@@ -5,20 +5,23 @@ namespace BuberDinner.Infrashstructure.Persistence.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        private static readonly List<User> _users = new();
+        private readonly BuberDinnerDbContext _context;
 
-        public UserRepository()
+        public UserRepository(BuberDinnerDbContext context)
         {
+            _context = context;
         }
 
         public void Add(User user)
         {
-            _users.Add(user);
+            _context.Users.Add(user);
+
+            _context.SaveChanges();
         }
 
         public User? GetUserByEmail(string email)
         {
-            return _users.SingleOrDefault(u => u.Email == email);
+            return _context.Users.SingleOrDefault(u => u.Email == email);
         }
     }
 }

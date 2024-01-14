@@ -4,7 +4,7 @@ namespace BuberDinner.Domain.UserAggregate.ValueObjects
 {
     public class UserId : ValueObject
     {
-        public Guid Value { get; }
+        public Guid Value { get; protected set; }
 
         private UserId(Guid value)
         {
@@ -14,6 +14,11 @@ namespace BuberDinner.Domain.UserAggregate.ValueObjects
         public static UserId CreateUnique()
         {
             return new(Guid.NewGuid());
+        }
+
+        public static UserId Create(Guid value)
+        {
+            return new(value);
         }
 
         public override IEnumerable<object> GetEqualtityComponents()

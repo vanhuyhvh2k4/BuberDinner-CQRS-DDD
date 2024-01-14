@@ -41,7 +41,7 @@ namespace BuberDinner.Domain.MenuAggregate
             string description,
             HostId hostId,
             AverageRating averageRating,
-            List<MenuSection>? sections,
+            List<MenuSection> sections,
             DateTime createdTime,
             DateTime updatedTime) : base(menuId)
         {
@@ -54,7 +54,7 @@ namespace BuberDinner.Domain.MenuAggregate
             UpdatedTime = updatedTime;
         }
 
-        public static Menu Create(string name, string description, HostId hostId, List<MenuSection>? sections)
+        public static Menu Create(string name, string description, HostId hostId, List<MenuSection> sections)
         {
             var menu = new Menu(
                 MenuId.CreateUnique(),
