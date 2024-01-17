@@ -15,7 +15,6 @@
     <None Remove="Common\Models\" />
     <None Remove="MenuReview\ValueObjects\" />
     <None Remove="Common\ValueObjects\" />
-    <None Remove="User\ValueObjects\" />
     <None Remove="BillAggregate\" />
     <None Remove="DinnerAggregate\" />
     <None Remove="GuestAggregate\" />
@@ -33,7 +32,6 @@
     <Folder Include="Common\Models\" />
     <Folder Include="MenuReviewAggregate\ValueObjects\" />
     <Folder Include="Common\ValueObjects\" />
-    <Folder Include="User\ValueObjects\" />
     <Folder Include="BillAggregate\" />
     <Folder Include="DinnerAggregate\" />
     <Folder Include="GuestAggregate\" />

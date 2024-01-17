@@ -130,7 +130,7 @@ namespace BuberDinner.Infrashstructure.Persistence.Configurations
 
             builder.Property(m => m.HostId)
                 .ValueGeneratedNever()
-                .HasConversion(id => id.Value, value => HostId.Create(value));
+                .HasColumnName("HostId");
         }
     }
 }

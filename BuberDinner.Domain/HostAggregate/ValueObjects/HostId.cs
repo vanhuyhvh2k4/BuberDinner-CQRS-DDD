@@ -2,9 +2,9 @@
 
 namespace BuberDinner.Domain.HostAggregate.ValueObjects
 {
-    public class HostId : ValueObject
+    public class HostId : AggregateRootId<Guid>
     {
-        public Guid Value { get; }
+        public override Guid Value { get; protected set; }
 
         private HostId(Guid value)
         {
@@ -20,7 +20,7 @@ namespace BuberDinner.Domain.HostAggregate.ValueObjects
         {
             return new(value);
         }
-
+         
         public override IEnumerable<object> GetEqualtityComponents()
         {
             yield return Value;

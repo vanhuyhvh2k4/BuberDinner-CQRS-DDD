@@ -1,25 +1,35 @@
 ﻿using BuberDinner.Domain.Common.Models;
 using BuberDinner.Domain.Common.ValueObjects;
+using BuberDinner.Domain.DinnerAggregate.ValueObjects;
 using BuberDinner.Domain.HostAggregate.ValueObjects;
+using BuberDinner.Domain.MenuAggregate.ValueObjects;
 using BuberDinner.Domain.UserAggregate.ValueObjects;
 
 namespace BuberDinner.Domain.HostAggregate
 {
     public class Host : AggregateRoot<HostId>
     {
-        public string FirstName { get; }
+        public readonly List<MenuId> _menuIds = new();
 
-        public string LastName { get; }
+        public readonly List<DinnerId> _dinnerIds = new();
 
-        public string ProfileImage { get; }
+        public string FirstName { get; private set; }
 
-        public AverageRating AverageRating { get; }
+        public string LastName { get; private set; }
 
-        public UserId UserId { get; }
+        public string ProfileImage { get; private set; }
 
-        public DateTime CreatedDateTime { get; }
+        public AverageRating AverageRating { get; private set; }
 
-        public DateTime UpdatedDateTime { get; }
+        public UserId UserId { get; private set; }
+
+        public IReadOnlyList<MenuId> MenuIds => _menuIds.AsReadOnly();
+
+        public IReadOnlyList<DinnerId> DinnerIds => _dinnerIds.AsReadOnly();
+
+        public DateTime CreatedDateTime { get; private set; }
+
+        public DateTime UpdatedDateTime { get; private set; }
 
         private Host(
             HostId hostId,
@@ -28,6 +38,8 @@ namespace BuberDinner.Domain.HostAggregate
             string profileImage,
             AverageRating averageRating,
             UserId userId,
+            List<MenuId> menuIds,
+            List<DinnerId> dinnerIds,
             DateTime createdDateTime,
             DateTime updateDateTime) : base(hostId)
         {
@@ -36,6 +48,8 @@ namespace BuberDinner.Domain.HostAggregate
             ProfileImage = profileImage;
             AverageRating = averageRating;
             UserId = userId;
+            _menuIds = menuIds;
+            _dinnerIds = dinnerIds;
             CreatedDateTime = createdDateTime;
             UpdatedDateTime = updateDateTime;
         }
@@ -45,7 +59,9 @@ namespace BuberDinner.Domain.HostAggregate
             string lastName,
             string profileImage,
             AverageRating averageRating,
-            UserId userId
+            UserId userId,
+            List<MenuId> menuIds,
+            List<DinnerId> dinnerIds
             )
         {
             return new(
@@ -55,9 +71,15 @@ namespace BuberDinner.Domain.HostAggregate
                 profileImage,
                 averageRating,
                 userId,
+                menuIds,
+                dinnerIds,
                 DateTime.UtcNow,
                 DateTime.UtcNow);
         }
+
+#pragma warning disable CS8618
+        private Host() { }
+#pragma warning restore CS8618
     }
 }
 
